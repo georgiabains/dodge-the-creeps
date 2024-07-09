@@ -35,6 +35,8 @@ public partial class Main : Node
 		hud.UpdateScore(_score);
 		hud.ShowMessage("Get Ready!");
 
+		GetTree().CallGroup("mobs", Node.MethodName.QueueFree);
+
 		Player player = GetNode<Player>("Player");
 		Marker2D startPosition = GetNode<Marker2D>("StartPosition");
 		player.Start(startPosition.Position);
